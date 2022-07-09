@@ -1,0 +1,17 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+
+    --primary-color:#000;
+    --primary-color-light:#181E26;
+    --secondary-color:#fff;
+    --secondary-color-light:#FFFFFF99;
+    --yellow-color:#F3C743;
+}
+body{
+    overflow-y: scroll;
+    background-color: var(--primary-color);
+}
