@@ -1,13 +1,25 @@
-# JUSTWATCH Search-Lite
+# JustWatch Search-Lite
 
-## RUN Project using DOCKER
+## Preview
+![Alt text](/public/images/preview.png "PROJECT PREVIEW")
+
+
+## Directory structure
 
 ```
-docker build -t justwatch/search-lite .
-```
-
-```
-docker run -it -p 8080:8080 --rm --name search-lite  justwatch/search-lite
+├── src                        // source code
+│   ├── appoloClient           // appoloClient config and graphql queries
+│   ├── assets                 // static resource like images, global style
+│   ├── components             // global public components
+│   ├── directives             // global directives
+│   ├── layout                 // Layout components
+│   ├── models                 // state models
+│   ├── store                  // global state management
+│   ├── utils                  // global public functions
+│   ├── view                   // view
+│   ├── App.vue                // entry view
+│   └── main.ts                // entry for loading 
+│   └── config.ts              // App config
 ```
 
 ## Project setup
@@ -29,6 +41,12 @@ yarn build
 ```
 yarn lint
 ```
+## Or run it using DOCKER
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
+docker build -t justwatch/search-lite .
+```
+
+```
+docker run -it -p 8080:8080 --rm --name search-lite  justwatch/search-lite
+```

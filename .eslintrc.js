@@ -17,7 +17,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/no-empty-interface': 0,
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off' ,
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   }
 }
