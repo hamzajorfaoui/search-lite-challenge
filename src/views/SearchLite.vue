@@ -11,19 +11,19 @@
 
 <script lang="ts">
 import { defineComponent } from "vue"
-import SearchInput from "./SearchInput.vue"
-import SearchIdle from "./SearchIdle.vue"
+import SearchInput from "@/components/SearchInput.vue"
+import SearchIdle from "@/components/SearchIdle.vue"
 import { mapActions, mapGetters, mapMutations } from "vuex"
 import {actionsEnum , gettersEnum, mutationsEnum} from "@/store/modules/search/module.enum"
 
   export default defineComponent({
-    name: 'HelloWorld',
+    name: 'SearchLite',
     components:{
       SearchInput,
       SearchIdle,
-      SearchList:() => import("./SearchList.vue"),
-      NotFound:() => import("./NotFound.vue"),
-      SearchLoading:() => import("./SearchLoading.vue")
+      SearchList:() => import("@/components/SearchList.vue"),
+      NotFound:() => import("@/components/NotFound.vue"),
+      SearchLoading:() => import("@/components/SearchLoading.vue")
 
     },
     methods:{
@@ -36,7 +36,7 @@ import {actionsEnum , gettersEnum, mutationsEnum} from "@/store/modules/search/m
         get: function() {
           return this.text
         },
-        set: function(text) {
+        set: function(text:string) {
           if (!text) {
             this.clearText();
             return;

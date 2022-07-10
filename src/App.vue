@@ -1,22 +1,23 @@
 <template>
-  
   <div id="app">
     <NavBar></NavBar>
-    <HelloWorld/>
+    <SearchLite/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapActions } from 'vuex';
-import HelloWorld from './components/HelloWorld.vue'
+import SearchLite from './views/SearchLite.vue'
 import NavBar from './layout/Header.vue'
 import { visitedMoviesActionEnum } from './store/modules/visitedMovies/enum';
+import { IRootState } from './store';
+
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld,
+    SearchLite,
     NavBar
   },
   methods:{
@@ -24,6 +25,11 @@ export default defineComponent({
   },
   created(){
     this.initVisitedMovies();
+    this.$store.subscribe(({type} , state:IRootState)=>{
+      if(type.startsWith("visitedMovies")){
+        localStorage.setItem("VisitedMovies" , JSON.stringify(state.visitedMovies))
+      }
+    })
   }
 })
 </script>

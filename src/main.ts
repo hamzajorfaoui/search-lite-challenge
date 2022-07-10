@@ -16,3 +16,4 @@ new Vue({
   apolloProvider,
   store
 }).$mount('#app')
+

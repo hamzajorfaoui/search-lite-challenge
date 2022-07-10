@@ -3,7 +3,7 @@ import Vue from "vue"
 
 const VdebounceDirective = Vue.directive("debounce" , function(element , binding) {
     if(binding.value !== binding.oldValue){
-        element.oninput = debounce(function(){
+        (element as HTMLInputElement).oninput = debounce(function(){
             element.dispatchEvent(new Event("change"))
         }, parseInt(binding.value))
     }

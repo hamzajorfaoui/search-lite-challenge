@@ -1,11 +1,11 @@
 import { Content, Data } from "@/models/store.model";
 import {gql} from 'graphql-tag'
 
-export function debounce(callBack:(...params) => void , waitTime:number) {
-    let TimeOut = null;
-    return function (...args) {
+export function debounce(callBack:() => void , waitTime:number) {
+    let TimeOut :NodeJS.Timeout | null= null;
+    return function () {
         if(TimeOut) clearTimeout(TimeOut);
-        TimeOut =  setTimeout(()=>{callBack(...args)} , waitTime)
+        TimeOut =  setTimeout(()=>{callBack()} , waitTime)
     }
 }
 

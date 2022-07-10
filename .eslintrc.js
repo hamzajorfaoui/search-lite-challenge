@@ -9,7 +9,11 @@ module.exports = {
     '@vue/typescript/recommended'
   ],
   parserOptions: {
-    ecmaVersion: 2020
+    ecmaVersion: 2020,
+    parser: "@typescript-eslint/parser",
+    ecmaFeatures : {
+      jsx : false
+    }
   },
   rules: {
     '@typescript-eslint/no-empty-interface': 0,

@@ -21,14 +21,13 @@
 </template>
 
 <script lang="ts">
-import { IRootState } from '@/store'
 import { visitedMoviesActionEnum} from '@/store/modules/visitedMovies/enum'
 import { defineComponent } from 'vue'
 import { mapActions, mapState } from 'vuex'
 export default defineComponent({
     name: 'SearchIdle',
     computed:{
-        ...mapState({visitedMovies:(state :IRootState)=>state.visitedMovies})  
+        ...mapState(["visitedMovies"])  
     },
     methods:{
         ...mapActions("visitedMovies",{clearAll:visitedMoviesActionEnum.CLEAR_ALL_MOVIES})  

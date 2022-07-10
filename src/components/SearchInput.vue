@@ -18,12 +18,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import VdebounceDirective from '../directives/debounce.directive'
-interface InputEvent extends Event{
-  target:HTMLInputElement
-}
+
 export default defineComponent({
     name: 'SearchInput',
-    props:["value"],
+    props:{value:String},
     directives:{
       VdebounceDirective
     },
@@ -32,9 +30,9 @@ export default defineComponent({
         (this.$refs["searchInput"] as HTMLInputElement).focus()
         this.$emit("input" ,"") 
       },
-      onChange(event:InputEvent){
-       this.$emit("input" ,event.target.value) 
-      }
+      onChange(event:Event){
+       this.$emit("input" ,(<HTMLInputElement>event.target).value) 
+      },
     }
 })
 </script>
