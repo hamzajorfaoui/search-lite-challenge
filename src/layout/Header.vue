@@ -1,5 +1,5 @@
 <template>
-    <header :class="headerClass">
+    <header class="d-flex flex-row" :class="{'animate':created}">
             <div class="Title Title1"><span>JustWatch</span></div>
             <div class="Title Title2"><span>Search-lite</span></div>
     </header>
@@ -17,20 +17,13 @@ import { defineComponent } from "vue";
     },
     mounted(){
         setTimeout(()=>{this.created = true})
-    },
-    computed:{
-        headerClass(){
-            return this.created ? "animate" : ""
-        }
     }
   })
 </script>
 
 <style scoped>
     header{
-        display: flex;
         justify-content: center;
-        flex-direction: row;
         padding:80px 0;
         font-size: 40px;
     }

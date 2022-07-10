@@ -1,4 +1,5 @@
 <template>
+
     <h3 class="not-found-text">Not Found</h3>
 </template>
 
@@ -12,9 +13,6 @@ export default defineComponent({
  
 <style scoped>
     .not-found-text{
-        display: flex;
-        justify-content: flex-start;
         color: var(--secondary-color);
-        font-weight: normal;
     }
 </style>

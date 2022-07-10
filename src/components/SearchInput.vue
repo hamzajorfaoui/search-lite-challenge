@@ -1,12 +1,12 @@
 <template>
-    <div class="input-container">
+    <div class="d-flex input-container">
       <input type="text"
              :value="value" 
              @change="onChange"
              v-debounce="500"
              ref="searchInput"
              placeholder="I want to watch...">
-      <button v-if="value" class="clear-icon" @click="onClearText">
+      <button v-if="value" class="btn clear-icon" @click="onClearText">
         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" color="">
           <path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z" />
         </svg>
@@ -31,7 +31,10 @@ export default defineComponent({
         this.$emit("input" ,"") 
       },
       onChange(event:Event){
-       this.$emit("input" ,(<HTMLInputElement>event.target).value) 
+       const InputValue = (<HTMLInputElement>event.target).value;
+       if(InputValue != this.value){
+          this.$emit("input" ,InputValue)
+       }
       },
     }
 })
@@ -49,16 +52,11 @@ export default defineComponent({
     background-color: transparent;
   }
   .input-container{
-    display: flex;
     position: relative;
     width:100%;
     margin-bottom: 20px;
   }
   .clear-icon{
-    cursor: pointer;
-    background-color: transparent;
-    outline: none;
-    border:none;
     position: absolute;
     right: 5px;
     top: 5px;

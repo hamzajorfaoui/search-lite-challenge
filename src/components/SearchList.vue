@@ -1,21 +1,21 @@
 <template>
-    <div class="list-container">
+    <div>
         <div class="list-title">
-            <h5>Search Result :</h5>
+            <h3 class="search-title">Search Result :</h3>
         </div>
         <a v-for="(item , index) in data" 
            :key="index" 
            :href="item.fullPath" 
            target="_blank" 
-           class="list-item"
+           class="d-flex list-item"
            @click="addMovie(item)">
-            <div class="list-row">
+            <div class="d-flex list-row">
                 <div class="list-img">
                     <img :src="item.posterUrl" 
                          height="80"
                          width="60">
                 </div>
-                <div class="list-content">
+                <div class="d-flex flex-column list-content">
                     <span class="subTitle"> {{item.__typename | getMovieType}} </span>
                     <strong class="Title"> {{item.title}} </strong>
                     <span class="subTitle">{{item.originalReleaseYear}}</span>
@@ -55,23 +55,16 @@ export default defineComponent({
 
  
 <style scoped>
-    .list-container{
-        margin: 10px 0;
-        width: 100%;
-    }
     .list-title{
-        color: var(--secondary-color);
+       margin-bottom: var(--search-text-margin)
     }
     .list-row{
-        display: flex;
         flex-direction: row;
         width: 100%;
         align-items: center;
     }
     .list-content{
         flex: 1;
-        display: flex;
-        flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
         height: 80px;
@@ -81,7 +74,6 @@ export default defineComponent({
         margin-right: 20px;
     }
     .list-item{
-        display: flex;
         margin: 5px 0;
         padding: 5px;
         height: 80px;
@@ -89,6 +81,9 @@ export default defineComponent({
         color: #FFFFFF66;
         transition: background-color .3s ease-in-out;
         border-radius: 5px;
+    }
+    .list-item:last-child{
+         margin: 5px 0 20px 0;
     }
     .list-item:hover{
         background-color: var(--primary-color-light);

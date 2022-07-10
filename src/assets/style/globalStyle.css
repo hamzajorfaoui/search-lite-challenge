@@ -10,8 +10,33 @@ html,body{
     --secondary-color:#fff;
     --secondary-color-light:#FFFFFF99;
     --yellow-color:#F3C743;
+    --search-text-margin:10px;
 }
 body{
     overflow-y: scroll;
     background-color: var(--primary-color);
+}
+
+/* global classes */
+
+.d-flex{
+    display: flex;
+}
+.flex-row{
+    flex-direction: row;
+}
+.flex-column{
+    flex-direction: column;
+}
+.btn{
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border:none;
+    color: var(--secondary-color-light);
+}
+
+.search-title{
+    color: var(--secondary-color);
+    margin: 0;
 }

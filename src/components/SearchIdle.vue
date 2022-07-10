@@ -1,9 +1,9 @@
 <template>
     <h3 class="not-found-text" v-if="!visitedMovies.length">No recent searches</h3>
     <div  v-else>
-        <div class="header">
+        <div class="d-flex flex-row header">
             <h3 class="not-found-text">Recently Searched</h3>
-            <button @click="clearAll">
+            <button @click="clearAll" class="btn">
                 Clear all
             </button>
         </div>
@@ -41,17 +41,13 @@ export default defineComponent({
  
 <style scoped>
     .not-found-text{
-        margin: 0;
-        display: flex;
-        justify-content: flex-start;
         color: var(--secondary-color);
-        font-weight: normal;
+        margin: 0;
     }
     .container{
         display: grid;
         grid-template-columns: repeat(auto-fill,minmax(80px,1fr));
         grid-gap: 10px;
-       
         text-decoration: none;
     }
     .Title{
@@ -63,16 +59,7 @@ export default defineComponent({
         white-space: nowrap;
     }
     .header{
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
-        margin-bottom: 10px;
-    }
-    .header button{
-        cursor: pointer;
-        background-color: transparent;
-        outline: none;
-        border: none;
-        color: var(--secondary-color-light);
+        margin-bottom: var(--search-text-margin);
     }
 </style>
