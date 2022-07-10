@@ -11,7 +11,7 @@ import { mapActions } from 'vuex';
 import SearchLite from './views/SearchLite.vue'
 import NavBar from './layout/Header.vue'
 import { visitedMoviesActionEnum } from './store/modules/visitedMovies/enum';
-import { IRootState } from './store';
+import { IRootState } from './models/store.model';
 
 
 export default defineComponent({

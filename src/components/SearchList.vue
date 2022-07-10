@@ -102,6 +102,7 @@ export default defineComponent({
     }
     .Title{
         color: var(--secondary-color);
+        font-size: 1.1rem;
     }
 </style>
 
