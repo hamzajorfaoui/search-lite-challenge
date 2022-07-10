@@ -1,4 +1,14 @@
-# cli-created-project
+# JUSTWATCH Search-Lite
+
+## RUN Project using DOCKER
+
+```
+docker build -t justwatch/search-lite .
+```
+
+```
+docker run -it -p 8080:8080 --rm --name search-lite  justwatch/search-lite
+```
 
 ## Project setup
 ```
