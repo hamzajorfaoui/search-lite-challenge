@@ -14,6 +14,16 @@ const visitedMoviesActions: ActionTree<Content[] , IRootState> = {
               return;  
             }
         }
+    },
+    [visitedMoviesActionEnum.ADD_MOVIE]({commit , state} , payload:Content) {
+        if(!state.some(el=>el.title==payload.title)){
+            localStorage.setItem("VisitedMovies" , JSON.stringify([...state , payload]))
+            commit(visitedMoviesMutationEnum.UPDATE_DATA , [payload]);
+        }
+    },
+    [visitedMoviesActionEnum.CLEAR_ALL_MOVIES]({commit }) {
+            localStorage.setItem("VisitedMovies" , JSON.stringify([]))
+            commit(visitedMoviesMutationEnum.CLEAR_DATA);
     }
 };
 

@@ -54,6 +54,7 @@ export default defineComponent({
     display: flex;
     position: relative;
     width:100%;
+    margin-bottom: 20px;
   }
   .clear-icon{
     cursor: pointer;

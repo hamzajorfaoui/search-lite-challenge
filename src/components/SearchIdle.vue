@@ -1,16 +1,39 @@
 <template>
-    <h3 class="not-found-text">No recent searches</h3>
+    <h3 class="not-found-text" v-if="!visitedMovies.length">No recent searches</h3>
+    <div  v-else>
+        <div class="header">
+            <h3 class="not-found-text">Recently Searched</h3>
+            <button @click="clearAll">
+                Clear all
+            </button>
+        </div>
+        <div class="container">
+            <a   v-for="(item , index) in visitedMovies"
+                :key="index"
+                :href="item.fullPath"
+                target="_blank">
+                    <img  :src="item.posterUrl" width="80">
+                    <span :title="item.title" class="Title">{{item.title}}</span>
+            </a>
+        </div>
 
+    </div>
 </template>
 
 <script lang="ts">
+import { IRootState } from '@/store'
+import { visitedMoviesActionEnum} from '@/store/modules/visitedMovies/enum'
 import { defineComponent } from 'vue'
-import { mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 export default defineComponent({
     name: 'SearchIdle',
     computed:{
-        ...mapState(["visitedMovies"])  
-    }
+        ...mapState({visitedMovies:(state :IRootState)=>state.visitedMovies})  
+    },
+    methods:{
+        ...mapActions("visitedMovies",{clearAll:visitedMoviesActionEnum.CLEAR_ALL_MOVIES})  
+    },
+
 },
 
 )
@@ -19,9 +42,38 @@ export default defineComponent({
  
 <style scoped>
     .not-found-text{
+        margin: 0;
         display: flex;
         justify-content: flex-start;
         color: var(--secondary-color);
         font-weight: normal;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(80px,1fr));
+        grid-gap: 10px;
+       
+        text-decoration: none;
+    }
+    .Title{
+        color: var(--secondary-color-light);
+        display: inline-block;
+        text-overflow: ellipsis;
+        overflow: hidden; 
+        width: 80px; 
+        white-space: nowrap;
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .header button{
+        cursor: pointer;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: var(--secondary-color-light);
     }
 </style>

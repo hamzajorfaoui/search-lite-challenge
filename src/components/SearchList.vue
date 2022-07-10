@@ -3,7 +3,12 @@
         <div class="list-title">
             <h5>Search Result :</h5>
         </div>
-        <a v-for="(item , index) in data" :key="index" :href="item.fullPath" target="_blank" class="list-item">
+        <a v-for="(item , index) in data" 
+           :key="index" 
+           :href="item.fullPath" 
+           target="_blank" 
+           class="list-item"
+           @click="addMovie(item)">
             <div class="list-row">
                 <div class="list-img">
                     <img :src="item.posterUrl" 
@@ -28,7 +33,9 @@
 
 <script lang="ts">
 import { Content } from '@/models/store.model'
+import { visitedMoviesActionEnum } from '@/store/modules/visitedMovies/enum'
 import { defineComponent } from 'vue'
+import { mapActions } from 'vuex'
 export default defineComponent({
     name: 'SearchList',
     props:{
@@ -39,6 +46,9 @@ export default defineComponent({
         getMovieType:function (val:string) :string{
             return val == "MovieContent" ? "MOVIE" : "TV SHOW"
         }
+    },
+    methods:{
+        ...mapActions("visitedMovies" , {addMovie:visitedMoviesActionEnum.ADD_MOVIE})
     }
 })
 </script>

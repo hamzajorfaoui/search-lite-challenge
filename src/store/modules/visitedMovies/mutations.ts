@@ -4,7 +4,10 @@ import { MutationTree } from 'vuex';
 
 const rootMutations: MutationTree<Content[]> = {
     [visitedMoviesMutationEnum.UPDATE_DATA](state :Content[], payload: Content[]) {
-        state.concat(payload);
+        state.push(...payload)
+    },
+    [visitedMoviesMutationEnum.CLEAR_DATA](state :Content[]) {
+        state.splice(0 , state.length)
     }
 };
 
