@@ -1,4 +1,3 @@
-
 export type loadType = "loading" | "loaded" | "error" | "idle";
 export interface Search{
     text:string,

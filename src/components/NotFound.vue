@@ -1,6 +1,6 @@
 <template>
 
-    <h3 class="not-found-text">Not Found</h3>
+    <h5 class="search-title">Not Found</h5>
 </template>
 
 <script lang="ts">

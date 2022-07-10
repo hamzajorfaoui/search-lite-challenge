@@ -1,8 +1,8 @@
 <template>
-    <h3 class="not-found-text" v-if="!visitedMovies.length">No recent searches</h3>
+    <h5 class="search-title" v-if="!visitedMovies.length">No recent searches</h5>
     <div  v-else>
         <div class="d-flex flex-row header">
-            <h3 class="not-found-text">Recently Searched</h3>
+            <h5 class="search-title">Recently Visited</h5>
             <button @click="clearAll" class="btn">
                 Clear all
             </button>

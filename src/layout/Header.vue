@@ -27,6 +27,12 @@ import { defineComponent } from "vue";
         padding:80px 0;
         font-size: 40px;
     }
+   
+    @media screen and (max-width:500px){
+       header{
+        font-size: 30px;
+      }
+    }
     .animate .Title{
         opacity: 1;
     }

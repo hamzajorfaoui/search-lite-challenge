@@ -1,6 +1,9 @@
 <template>
     <div class="d-flex input-container">
       <input type="text"
+             autocomplete="off"
+             autocorrect="off"
+             spellcheck="false"
              :value="value" 
              @change="onChange"
              v-debounce="500"

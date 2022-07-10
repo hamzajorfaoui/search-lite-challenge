@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="list-title">
-            <h3 class="search-title">Search Result :</h3>
+            <h5 class="search-title">Search Result :</h5>
         </div>
         <a v-for="(item , index) in data" 
            :key="index" 

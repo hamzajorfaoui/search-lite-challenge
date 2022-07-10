@@ -1,5 +1,6 @@
+import AppConfig from '@/config';
 import ApolloClient from 'apollo-boost';
 
 export const apolloClient = new ApolloClient({
-  uri: 'https://apis.justwatch.com/graphql'
+  uri: AppConfig.apiUrl
 })
