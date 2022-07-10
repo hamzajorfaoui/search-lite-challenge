@@ -1,5 +1,4 @@
-import { Content } from '@/models/store.model';
-import { IRootState } from '@/store';
+import { Content , IRootState } from '@/models/store.model';
 import  vistedMoviesMutations  from './mutations';
 import  vistedMoviesActions  from './actions';
 import { VisitedMoviesState } from './state';

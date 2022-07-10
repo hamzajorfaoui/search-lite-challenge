@@ -2,7 +2,7 @@ import { initState } from './state';
 import { Content, Search } from '@/models/store.model';
 import { MutationTree } from 'vuex';
 import {mutationsEnum} from './module.enum';
-import { mapMovies } from '@/helpers';
+import { mapMovies } from '@/utils';
 
 const textMutations: MutationTree<Search> = {
     [mutationsEnum.Mutate_TEXT](state :Search, text: string) {

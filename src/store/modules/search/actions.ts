@@ -1,9 +1,8 @@
 import { ActionContext , ActionTree } from 'vuex';
-import { IRootState } from '@/store';
-import { Search , Data } from '@/models/store.model';
+import { Search , Data , IRootState} from '@/models/store.model';
 import { actionsEnum, mutationsEnum } from './module.enum';
 import { apolloClient } from '@/appoloClient'
-import { MapDataToContent } from '@/helpers';
+import { MapDataToContent } from '@/utils';
 import searchQuery from '@/appoloClient/queries/search.query';
 
 type Context = ActionContext<Search, IRootState>;

@@ -1,5 +1,4 @@
-import { IRootState } from '@/store';
-import { Search , Content, loadType } from '@/models/store.model';
+import { Search , Content, loadType , IRootState} from '@/models/store.model';
 import { GetterTree } from 'vuex';
 import {gettersEnum} from './module.enum';
 

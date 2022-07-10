@@ -1,4 +1,8 @@
 export type loadType = "loading" | "loaded" | "error" | "idle";
+export interface IRootState{
+    visitedMovies:Content[],
+    search:Search
+}
 export interface Search{
     text:string,
     movies:Content[],

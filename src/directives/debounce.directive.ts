@@ -1,4 +1,4 @@
-import { debounce } from "@/helpers";
+import { debounce } from "@/utils";
 import Vue from "vue"
 
 const VdebounceDirective = Vue.directive("debounce" , function(element , binding) {

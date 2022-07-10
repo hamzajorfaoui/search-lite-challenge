@@ -1,7 +1,6 @@
 import { visitedMoviesMutationEnum } from './enum'
-import { Content } from '../../../models/store.model';
+import { Content , IRootState} from '../../../models/store.model';
 import { visitedMoviesActionEnum } from './enum';
-import { IRootState } from '@/store';
 import { ActionTree } from 'vuex';
 
 const visitedMoviesActions: ActionTree<Content[] , IRootState> = {
