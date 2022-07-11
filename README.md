@@ -41,7 +41,7 @@ yarn build
 ```
 yarn lint
 ```
-## Or run it using DOCKER
+## Using DOCKER
 
 ```
 docker build -t justwatch/search-lite .
