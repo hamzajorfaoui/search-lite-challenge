@@ -24,7 +24,8 @@ import { defineComponent } from "vue";
 <style scoped>
     header{
         justify-content: center;
-        padding:80px 0;
+        align-items: center;
+        height: 200px;
         font-size: 40px;
     }
    

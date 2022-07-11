@@ -12,7 +12,7 @@
                 :key="index"
                 :href="item.fullPath"
                 target="_blank">
-                    <img  :src="item.posterUrl" width="80">
+                    <img  :src="item.posterUrl" width="80" height="113">
                     <span :title="item.title" class="Title">{{item.title}}</span>
             </a>
         </div>
