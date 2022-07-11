@@ -21,11 +21,12 @@ export default defineComponent({
     NavBar
   },
   methods:{
-    ...mapActions("visitedMovies" , {initVisitedMovies:visitedMoviesActionEnum.INIT_DATA}),
+    ...mapActions("visitedMovies" , {getVisitedMoviesFromLocalStage:visitedMoviesActionEnum.INIT_VISITEDMOVIES_FROM_LOCALSTORAGE}),
   },
   created(){
-    this.initVisitedMovies();
+    this.getVisitedMoviesFromLocalStage();
     this.$store.subscribe(({type} , state:IRootState)=>{
+      /* listen to store changes and update localstorage for the visited Movies  */
       if(type.startsWith("visitedMovies")){
         localStorage.setItem("VisitedMovies" , JSON.stringify(state.visitedMovies))
       }

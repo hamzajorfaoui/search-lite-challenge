@@ -1,6 +1,6 @@
 import { Search , Content, loadType , IRootState} from '@/models/store.model';
 import { GetterTree } from 'vuex';
-import {gettersEnum} from './module.enum';
+import {gettersEnum} from './enum';
 
 const textGetters: GetterTree<Search, IRootState> = {
 

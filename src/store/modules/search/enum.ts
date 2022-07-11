@@ -1,7 +1,6 @@
 
 export enum mutationsEnum {
     "ADD_TEXT"="ADD_TEXT",
-    "Mutate_TEXT"="Mutate_TEXT",
     "CLEAR_TEXT"="CLEAR_TEXT",
     "Load_Movies"="Load_Movies",
     "Error_Movies"="Error_Movies",

@@ -15,6 +15,7 @@ const searchQuery = gql`query GetSuggestedTitles( $country: Country!
             posterUrl
             __typename
           }
+          id
           __typename
         }
         __typename

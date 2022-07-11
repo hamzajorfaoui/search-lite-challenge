@@ -5,7 +5,7 @@ export enum visitedMoviesMutationEnum{
 }
 
 export enum visitedMoviesActionEnum{
-    "INIT_DATA"="INIT_DATA",
+    "INIT_VISITEDMOVIES_FROM_LOCALSTORAGE"="INIT_VISITEDMOVIES_FROM_LOCALSTORAGE",
     "ADD_MOVIE"="ADD_MOVIE",
     "CLEAR_ALL_MOVIES"="CLEAR_ALL_MOVIES"
 }

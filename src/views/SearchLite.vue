@@ -14,7 +14,7 @@ import { defineComponent } from "vue"
 import SearchInput from "@/components/SearchInput.vue"
 import SearchIdle from "@/components/SearchIdle.vue"
 import { mapActions, mapGetters, mapMutations } from "vuex"
-import {actionsEnum , gettersEnum, mutationsEnum} from "@/store/modules/search/module.enum"
+import {actionsEnum , gettersEnum, mutationsEnum} from "@/store/modules/search/enum"
 
   export default defineComponent({
     name: 'SearchLite',

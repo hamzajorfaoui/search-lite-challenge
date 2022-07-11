@@ -35,6 +35,8 @@ export default defineComponent({
       },
       onChange(event:Event){
        const InputValue = (<HTMLInputElement>event.target).value;
+       /*to avoid emitting the same value twice when the input loses focus 
+         due to the on change event*/
        if(InputValue != this.value){
           this.$emit("input" ,InputValue)
        }
